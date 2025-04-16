@@ -4,9 +4,12 @@ import numpy as np
 import os
 import pickle
 
+model_path = "fraud_model.plk"
 
+if not os.path.exists(model_path):
+    print("Model file not found! Path tried:", model_path)
+    exit()
 
-model_path = os.getenv('MODEL_PATH', 'fraud_model.pkl')  # fallback if not set
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
 
