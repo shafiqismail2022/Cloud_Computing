@@ -16,7 +16,7 @@ with open(model_path, 'rb') as f:
 app = Flask(__name__)
 
 # Load the trained model (ensure fraud_model.pkl is in the same directory)
-model = joblib.load('fraud_model.pkl')
+model = joblib.load(model_path)
 
 @app.route('/', methods=['GET'])
 def home():
