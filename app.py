@@ -1,6 +1,14 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+import os
+import pickle
+
+
+
+model_path = os.getenv('MODEL_PATH', 'fraud_model.pkl')  # fallback if not set
+with open(model_path, 'rb') as f:
+    model = pickle.load(f)
 
 app = Flask(__name__)
 
