@@ -4,7 +4,7 @@ import numpy as np
 import os
 import pickle
 
-model_path = "fraud_model.plk"
+model_path = "fraud_model.pkl"
 
 if not os.path.exists(model_path):
     print("Model file not found! Path tried:", model_path)
