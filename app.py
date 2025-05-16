@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 import os
-import pickle
 
 model_path = "fraud_model.pkl"
 
@@ -10,8 +9,6 @@ if not os.path.exists(model_path):
     print("Model file not found! Path tried:", model_path)
     exit()
 
-with open(model_path, 'rb') as f:
-    model = pickle.load(f)
 
 app = Flask(__name__)
 
